@@ -1,0 +1,63 @@
+.options-box{
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 82vh;
+}
+
+.title-options{
+    color: #777;
+    font-weight: 550;
+    position: relative;
+    left: 30px;
+    top: 15px;
+    width: calc(100% - 48px);
+    display: flex;
+    justify-content: start;
+    font-size: 12px;
+}
+
+/* Opciones del nav */
+
+.options{
+    position: relative;
+    left: 17px;
+    top: 25px;
+    width: calc(100% - 35px);
+    height: auto;
+}
+
+.specific-option{
+    width: 100%;
+    height: 47px;
+    background-color: rgba(0, 171, 85, 0.08);
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(6, fr);
+    margin: 5px;
+}
+
+.icon-column{
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: #777;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.name-option-column{
+    grid-column: 2/6;
+    grid-row: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #777;
+    font-size: 15px;
+}

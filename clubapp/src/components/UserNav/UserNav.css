@@ -1,0 +1,69 @@
+/* Clases para el contenedor de informacion de usuario en el nav */
+
+.container-user{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgba(145, 158, 171, 0.12);
+    width: calc(100% - 44px);
+    height: 78px;
+    top: 44px;
+    left: 22px;
+    border-radius: 12px;
+}
+
+.not-visible{
+    visibility: hidden;
+}
+
+/* Container logo user */
+
+.first-column{
+    background-color: transparent;
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-user{
+    background-color: rgb(0, 0, 0, 0.925);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+}
+/* Container name user */
+
+.second-column{
+    background-color: transparent;
+    grid-column: 2/4;
+    grid-row: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.info-user{
+    width: 120px;
+    height: 46px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: inherit;
+}
+
+.name-user{
+    font-weight: 550;
+}
+
+.profile-name{
+    font-weight: 400;
+    font-size: 15px;
+}

@@ -1,7 +1,8 @@
 import './HzNav.css'
-import {Animated} from "react-animated-css";
 import { useState } from 'react';
-
+import LogoNav from '../LogoNav/LogoNav';
+import UserNav from '../UserNav/UserNav';
+import OptionsNav from '../OptionsNav/OptionsNav';
 
 const HzNav = () => {
 
@@ -16,14 +17,10 @@ const HzNav = () => {
     <>
         <div className={`container ${open ? "container-close" : ""}`} >
             <div className='top-box' >
-                <div className='container-logo-app' >
-                    {open
-                        ? <p>A</p>
-                        : <Animated animationIn='fadeIn' animationInDuration={500}><p>Logo App</p></Animated>
-                    }
-                </div>
+                <LogoNav open={open} />
+                <UserNav open={open} />
             </div>
-            <div className='options-box' ></div>
+            <OptionsNav open={open} />
         </div>
         <button type='button' className={`button-bar ${open ? "button-bar-close" : ""}`} onClick={handleClickButton} >
           {open
