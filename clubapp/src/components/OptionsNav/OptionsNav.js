@@ -1,10 +1,16 @@
-import React from "react"
+import React, {useState} from "react"
 import './OptionsNav.css'
 import { Animated } from "react-animated-css"
 
 const OptionsNav = ({open}) => {
 
-    const options = [['A','Opción A'], ['B','Opción B'], ['C','Opción C'], ['D','Opción D'], ['E','Opción E']]
+    const [optionSelected, setOptionSelected] = useState(1);
+
+    const options = [[1,'A','Opción A'], [2,'B','Opción B'], [3,'C','Opción C'], [4,'D','Opción D'], [5,'E','Opción E']]
+
+    const handleClick = idOption => {
+        setOptionSelected(idOption)
+    }
 
     return(
             <div className='options-box' >
@@ -14,21 +20,21 @@ const OptionsNav = ({open}) => {
                     : <Animated animationIn="fadeIn" animationInDuration={500}><p className="title-options">OPCIONES</p></Animated> 
                 }
                 <div className="options">
-                    {options.map( ([iconOption, nameOption]) => {
+                    {options.map( ([idOption, iconOption, nameOption]) => {
                         return(
-                        <div className="specific-option">
-                        <div className="icon-column">
-                            <p>{iconOption}</p>
-                        </div>
-                        {
-                         open
-                            ? <></>
-                            : <Animated animationIn="fadeIn" animationInDuration={500}>
-                                <div className="name-option-column">
-                                    <p>{nameOption}</p>
+                        <div className={`specific-option ${idOption === optionSelected ? 'specific-option-selected' : ''}`} key={idOption} onClick={() => handleClick(idOption)}>
+                            <div className={`icon-column ${idOption === optionSelected ? 'icon-column-selected' : ''}`}>
+                                <p>{iconOption}</p>
+                            </div>
+                            {
+                            open
+                                ? <></>
+                                : <div className={`name-option-column ${idOption === optionSelected ? 'name-option-selected' : ''}`}>
+                                    <Animated animationIn="fadeIn" animationInDuration={500}>
+                                        <p>{nameOption}</p>
+                                    </Animated>
                                 </div>
-                              </Animated>   
-                        }
+                            }
                     </div>
                     )
                     } )}

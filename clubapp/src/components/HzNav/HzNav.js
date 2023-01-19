@@ -16,7 +16,7 @@ const HzNav = () => {
   return (
     <>
         <div className={`container ${open ? "container-close" : ""}`} >
-            <div className='top-box' >
+            <div className={`top-box ${open ? 'top-box-close' : ''}`} >
                 <LogoNav open={open} />
                 <UserNav open={open} />
             </div>

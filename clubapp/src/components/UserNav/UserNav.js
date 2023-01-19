@@ -16,8 +16,12 @@ const UserNav = ({open}) => {
                             </div>
                             <div className="second-column">
                                 <div className="info-user">
-                                    <p className="name-user">Usuario App</p>
-                                    <p className="profile-name">admin</p>
+                                    <Animated animationIn="fadeIn" animationInDuration={500}>
+                                        <p className="name-user">Usuario App</p>
+                                    </Animated>
+                                    <Animated animationIn="fadeIn" animationInDuration={500}>
+                                        <p className="profile-name">admin</p>
+                                    </Animated>
                                 </div>
                             </div>
                         </div>

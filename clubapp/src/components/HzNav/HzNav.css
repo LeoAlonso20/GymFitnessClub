@@ -33,6 +33,12 @@
     background-color: transparent;
     width: 100%;
     height: 18vh;
+    transition: all 0.2s ease;
+}
+
+.top-box-close{
+    height: 4.5vh;
+   
 }
 
 /* Boton para abrir/cerrar barra */
@@ -40,10 +46,10 @@
 .button-bar{
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     position: relative;
-    left: 271px;
+    left: 270px;
     top: 33px;
     border: 1px dashed rgba(145, 158, 171, 0.24);
     z-index: 1;
@@ -64,22 +70,58 @@
 
 
 /* medias querys */
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* Super extra small devices (phones mini) */
+@media only screen and (max-width: 400px){
     .button-bar{
-        left: 252px;
+        left: 224px;
     }
     .button-bar-close{
-        left: 75px;
-        background-color: black;
+        left: 65px;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 400px) and (max-width: 600px){
+    .button-bar{
+        left: 244px;
+    }
+    .button-bar-close{
+        left: 70px;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .button-bar{
+        left: 270px;
+    }
+    .button-bar-close{
+        left: 80px;
+    }
+}
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+    .button-bar{
+        left: 320px;
+    }
+    .button-bar-close{
+        left: 95px;
+    }
+}
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+    .button-bar{
+        left: 270px;
+    }
+    .button-bar-close{
+        left: 80px;
+    }
+}
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+    .button-bar{
+        left: 270px;
+    }
+    .button-bar-close{
+        left: 80px;
+    }
+}
