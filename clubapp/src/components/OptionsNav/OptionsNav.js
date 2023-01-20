@@ -22,7 +22,7 @@ const OptionsNav = ({open}) => {
                 <div className="options">
                     {options.map( ([idOption, iconOption, nameOption]) => {
                         return(
-                        <div className={`specific-option ${idOption === optionSelected ? 'specific-option-selected' : ''}`} key={idOption} onClick={() => handleClick(idOption)}>
+                        <div className={`specific-option ripple ${idOption === optionSelected ? 'specific-option-selected' : ''}`} key={idOption} onClick={() => handleClick(idOption)}>
                             <div className={`icon-column ${idOption === optionSelected ? 'icon-column-selected' : ''}`}>
                                 <p>{iconOption}</p>
                             </div>
