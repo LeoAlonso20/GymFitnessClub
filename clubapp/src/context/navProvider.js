@@ -4,8 +4,7 @@ import NavContext from "./navContext";
 const NavProvider = ({children}) => {
 
     const [navState, setNavState] = useState({
-        open: true,
-        option: 1
+        open: true
     });
 
     const updateNavState = (newNavState) => {

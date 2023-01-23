@@ -12,8 +12,6 @@ const HzNav = () => {
   const handleClickButton = () => {
     if( navState.open ) updateNavState({...navState, open: false})
     else                updateNavState({...navState, open: true})
-    // if( open ) setOpen(() => false)
-    // else setOpen(() => true)
   }
 
   return (

@@ -4,12 +4,18 @@ import './OptionsNav.css'
 import { Animated } from "react-animated-css"
 import NavContext from "../../../context/navContext"
 import ButtonOption from "../ButtonOption/ButtonOption"
+import useOptionPath from "../../../hooks/useOptionPath"
 
 const OptionsNav = () => {
 
+
     const {navState} = useContext(NavContext)
 
-    const options = [[1,'A','Opción A'], [2,'B','Opción B'], [3,'C','Opción C'], [4,'D','Opción D'], [5,'E','Opción E']]
+    useOptionPath();
+
+    //Refacatorizar a un customHook
+
+    const options = [[1,'A','Clientes'], [2,'B','Cuotas'], [3,'C','Planes'], [4,'D','Reportes'], [5,'E','Ajustes']]
 
     return(
             <div className='options-box' >

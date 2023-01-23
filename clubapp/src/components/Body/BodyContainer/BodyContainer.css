@@ -7,5 +7,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.comp-1{
     background-color: black;
+    width: 100px;
+    height: 100px;
+}
+
+.comp-2{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.comp-3{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+
+.comp-4{
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+}
+
+.comp-5{
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
 }
