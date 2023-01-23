@@ -1,13 +1,16 @@
-import React from "react"
+import React, {useContext} from "react"
 import './UserNav.css'
 import {Animated} from "react-animated-css";
+import NavContext from "../../../context/navContext";
 
+const UserNav = () => {
 
-const UserNav = ({open}) => {
+    const {navState} = useContext(NavContext)
+
     return (
         <>
         {
-            open
+            navState.open
                     ? <></>
                     : <Animated animationIn="fadeIn" animationInDuration={500}>
                         <div className='container-user'>

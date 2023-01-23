@@ -1,12 +1,16 @@
 import './LogoNav.css'
 import {Animated} from "react-animated-css";
-import React from 'react';
+import React, {useContext} from 'react';
+import NavContext from '../../../context/navContext';
 
 
-const LogoNav = ({open}) => {
+const LogoNav = () => {
+
+    const {navState} = useContext(NavContext)
+
     return (
         <div className='container-logo-app' >
-                    {open
+                    {navState.open
                         ? <p>A</p>
                         : <Animated animationIn='fadeIn' animationInDuration={500}><p>Logo App</p></Animated>
                     }
