@@ -1,11 +1,20 @@
 import { Route } from 'wouter'
 import './BodyContainer.css'
+import { useContext } from 'react'
+import NavContext from '../../../context/navContext'
+import BodyClientes from '../BodyClientes/BodyClientes'
 
 const BodyContainer = () => {
 
+    const {navState} = useContext(NavContext);
+
     return(
-            <div className='body-container'>
-                <Route path='/clientes' component={() => <div className='comp-1'></div>}></Route>
+            <div className={`body-container ${navState.open ? 'body-container-amp' : ''}`}>
+                <Route path='/clientes'>
+                    <div className='container-option'>
+                        <BodyClientes></BodyClientes>
+                    </div>
+                    </Route>
                 <Route path='/cuotas' component={() => <div className='comp-2'></div>}></Route>
                 <Route path='/planes' component={() => <div className='comp-3'></div>}></Route>
                 <Route path='/reportes' component={() => <div className='comp-4'></div>}></Route>

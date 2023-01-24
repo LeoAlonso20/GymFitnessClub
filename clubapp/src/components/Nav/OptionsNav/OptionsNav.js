@@ -13,11 +13,10 @@ const OptionsNav = () => {
 
     useOptionPath();
 
-    //Refacatorizar a un customHook
-
     const options = [[1,'A','Clientes'], [2,'B','Cuotas'], [3,'C','Planes'], [4,'D','Reportes'], [5,'E','Ajustes']]
 
-    return(
+
+    return(        
             <div className='options-box' >
                 {
                 navState.open

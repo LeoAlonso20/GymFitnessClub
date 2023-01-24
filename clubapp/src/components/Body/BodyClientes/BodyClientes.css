@@ -1,0 +1,21 @@
+
+.container-option-description{
+    position: relative;
+    display: inline-block;
+    background-color: rgb(0, 0, 0, 0.925);
+    width: 450px;
+    min-width: 300px;
+    height: 33%;
+    border-radius: 12px;
+    margin-right: 25px;
+}
+
+.container-add-cliente{
+    display: inline-block;
+    position: relative;
+    background-color: rgba(85, 160, 144, 0.925);
+    width: 1200px;
+    min-width: 300px;
+    height: 33%;
+    border-radius: 12px;
+}

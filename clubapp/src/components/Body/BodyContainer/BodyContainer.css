@@ -2,17 +2,28 @@
     color: azure;
     height: 100vh;
     width: calc(100% - 28vh);
-    left: 28vh;
+    left: 25.6vh;
+    top: 0;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    transition: all 0.2s ease;
 }
 
-.comp-1{
-    background-color: black;
-    width: 100px;
-    height: 100px;
+.container-option{
+    position: relative;
+    width: 95%;
+    height: 83vh;
+    display: flex;
+    padding: 20px;
+    background-color: beige;
+}
+
+.body-container-amp{
+    left: 6.65vh;
+    width: calc(100% - 8vh);
 }
 
 .comp-2{

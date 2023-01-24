@@ -6,7 +6,7 @@ const useOptionPath = () => {
 
     const {navState, updateNavState} = useContext(NavContext)
 
-    const [location] = useLocation()
+    const [location, setLocation] = useLocation()
 
     useEffect(() => {
         
@@ -20,11 +20,19 @@ const useOptionPath = () => {
             'ajustes': 5
         }
 
-        const idOption = ID_OPTION[pathLocation.substring(1, )]
+        let idOption = 1
+
+        if (typeof ID_OPTION[pathLocation.substring(1, )] === "undefined"){
+            setLocation('/clientes')
+        } else {
+             idOption = ID_OPTION[pathLocation.substring(1, )]
+        }
 
         updateNavState({...navState, option: idOption})
 
+
     }, []);
+
 
 }
 
