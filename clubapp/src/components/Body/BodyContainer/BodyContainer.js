@@ -3,6 +3,8 @@ import './BodyContainer.css'
 import { useContext } from 'react'
 import NavContext from '../../../context/navContext'
 import BodyClientes from '../BodyClientes/BodyClientes'
+import { Animated } from 'react-animated-css'
+
 
 const BodyContainer = () => {
 
@@ -14,7 +16,7 @@ const BodyContainer = () => {
                     <div className='container-option'>
                         <BodyClientes></BodyClientes>
                     </div>
-                    </Route>
+                </Route>
                 <Route path='/cuotas' component={() => <div className='comp-2'></div>}></Route>
                 <Route path='/planes' component={() => <div className='comp-3'></div>}></Route>
                 <Route path='/reportes' component={() => <div className='comp-4'></div>}></Route>

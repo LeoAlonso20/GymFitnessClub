@@ -18,12 +18,11 @@
     height: 83vh;
     display: flex;
     padding: 20px;
-    background-color: beige;
 }
 
 .body-container-amp{
     left: 6.65vh;
-    width: calc(100% - 8vh);
+    width: calc(100% - 9vh);
 }
 
 .comp-2{

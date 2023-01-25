@@ -4,6 +4,12 @@ import { Link } from "wouter"
 import NavContext from "../../../context/navContext"
 import { Animated } from 'react-animated-css'
 
+import PersonAddAlt1TwoToneIcon from '@mui/icons-material/PersonAddAlt1TwoTone';
+import SavingsTwoToneIcon from '@mui/icons-material/SavingsTwoTone';
+import FolderCopyTwoToneIcon from '@mui/icons-material/FolderCopyTwoTone';
+import LeaderboardTwoToneIcon from '@mui/icons-material/LeaderboardTwoTone';
+import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
+
 const ButtonOption = ({id, icon, name}) => {
    
     const {navState, updateNavState} = useContext(NavContext)
@@ -16,11 +22,28 @@ const ButtonOption = ({id, icon, name}) => {
         return optionName.split(" ")[0].toLowerCase()
     }
 
+    const renderIcon = idOption => {
+        switch(idOption){
+
+            case 1:
+                return <PersonAddAlt1TwoToneIcon />
+            case 2:
+                return <SavingsTwoToneIcon />
+            case 3:
+                return <FolderCopyTwoToneIcon />
+            case 4:
+                return <LeaderboardTwoToneIcon />
+            default:
+                return <SettingsTwoToneIcon />
+
+        }
+    }
+
 
     return(
         <Link to={`/${createPath(name)}`} className={`specific-option ripple ${id === navState.option ? 'specific-option-selected' : ''}`} key={id} onClick={() => handleClick(id)}>
                             <div className={`icon-column ${id === navState.option ? 'icon-column-selected' : ''}`}>
-                                <p>{icon}</p>
+                                {renderIcon(id)}
                             </div>
                             {
                             navState.open
