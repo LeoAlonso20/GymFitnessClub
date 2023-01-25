@@ -4,7 +4,7 @@ import { Link } from "wouter"
 import NavContext from "../../../context/navContext"
 import { Animated } from 'react-animated-css'
 
-import PersonAddAlt1TwoToneIcon from '@mui/icons-material/PersonAddAlt1TwoTone';
+import PermIdentityTwoToneIcon from '@mui/icons-material/PermIdentityTwoTone';
 import SavingsTwoToneIcon from '@mui/icons-material/SavingsTwoTone';
 import FolderCopyTwoToneIcon from '@mui/icons-material/FolderCopyTwoTone';
 import LeaderboardTwoToneIcon from '@mui/icons-material/LeaderboardTwoTone';
@@ -26,7 +26,7 @@ const ButtonOption = ({id, icon, name}) => {
         switch(idOption){
 
             case 1:
-                return <PersonAddAlt1TwoToneIcon />
+                return <PermIdentityTwoToneIcon />
             case 2:
                 return <SavingsTwoToneIcon />
             case 3:

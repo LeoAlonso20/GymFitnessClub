@@ -10,12 +10,12 @@ const BodyClientes = () => {
     return (
             <div >
                 {/* Tratar de refactorizar en componentes */}
-                <div className="container-option-description">
+                <div className={`container-option-description ${navState.open ? '' : 'desc-dec'}`}>
                     <div className='container-content'>
-                        <div className='container-title-description'>
-                            <p className='text-title title-description'>CLIENTES</p>
+                        <div className={`container-title-description  ${navState.open ? '' : 'container-title-desc-dec'}`}>
+                            <p className={`text-title title-description ${navState.open ? '' : 'title-desc-dec'}`}>CLIENTES</p>
                         </div>
-                        <div className='container-info-description'>
+                        <div className={`container-info-description ${navState.open ? '' : 'info-dec'}`}>
                             <p className='text-description'>
                                 Texto provisional hasta que se encuentre que descripción poner en esta sección.
                                 La idea es algo resumido, que igualmente ocupe un buen espacio además de sumarle alguna imagen al bloque.
