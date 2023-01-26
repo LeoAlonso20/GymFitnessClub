@@ -1,5 +1,5 @@
 import './RapidTools.css'
-import AccountMenu from './AccountMenu/AccountMenu'
+import AccountMenu from './AccountMenu/UserMenu'
 
 const RapidTools = () => {
 

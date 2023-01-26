@@ -1,3 +1,4 @@
+import './UserMenu.css'
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
@@ -74,31 +75,28 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
-        </MenuItem>
-        <Divider />
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Add another account
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          Logout
-        </MenuItem>
+        <div className='container-info-user'>
+          <p className='name-user'>Usuario App</p>
+          <p className='email-user'>usuarioApp0@gmail.com</p>
+        </div>
+        <Divider sx={{borderWitdh: '0px 0px thin', borderColor: 'rgba(145, 158, 171, 0.24)', borderStyle: 'dashed'}}/>
+        <div className='container-options-menu-user'>
+          <MenuItem sx={{borderRadius: '8px', padding: '6px 16px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', width: '94%'}} onClick={handleClose}>
+            <p className='name-user option-text'>Home</p>
+          </MenuItem>
+          <MenuItem sx={{borderRadius: '8px', padding: '6px 16px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', width: '94%'}} onClick={handleClose}>
+            <p className='name-user option-text'>Perfil</p>
+          </MenuItem>
+          <MenuItem sx={{borderRadius: '8px', padding: '6px 16px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', width: '94%'}} onClick={handleClose}>
+            <p className='name-user option-text'>Ajustes</p>
+          </MenuItem>
+        </div>
+          <Divider sx={{borderWitdh: '0px 0px thin', borderColor: 'rgba(145, 158, 171, 0.24)', borderStyle: 'dashed'}}/>
+          <div className='container-options-menu-user'>
+            <MenuItem sx={{borderRadius: '8px', padding: '6px 16px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', width: '94%'}} onClick={handleClose}>
+              <p className='name-user option-text'>Cerrar sesión</p>
+            </MenuItem>
+          </div>
       </Menu>
     </React.Fragment>
   );
