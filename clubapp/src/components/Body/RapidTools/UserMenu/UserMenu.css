@@ -1,0 +1,36 @@
+.container-info-user{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container-options-menu-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.name-user{
+    margin: 0px;
+    font-weight: 600;
+    line-height: 1.57143;
+    font-size: 0.875rem;
+    font-family: "Public Sans", sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgb(33, 43, 54);
+}
+
+.email-user{
+    font-weight: 400;
+    color: rgb(99, 115, 129);
+    font-size: 0.85rem;
+}
+
+.option-text{
+    font-weight: 400;
+}

@@ -4,14 +4,10 @@ import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,7 +21,7 @@ export default function AccountMenu() {
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px' }}>
-        <Tooltip title="Account settings">
+        <Tooltip title="Opciones de usuario">
           <IconButton
             onClick={handleClick}
             size="small"
@@ -34,7 +30,9 @@ export default function AccountMenu() {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 40, height: 40, backgroundColor: 'rgb(0, 0, 0, 0.925)' }}>I</Avatar>
+            <Avatar sx={{ width: 40, height: 40, backgroundColor: 'rgb(99, 115, 129, 0.12)' }}>
+              <PersonRoundedIcon sx={{color: 'rgb(99, 115, 129)'}} />
+              </Avatar>
           </IconButton>
         </Tooltip>
       </Box>

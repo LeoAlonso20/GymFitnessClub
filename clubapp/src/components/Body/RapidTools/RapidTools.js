@@ -1,5 +1,7 @@
 import './RapidTools.css'
-import AccountMenu from './AccountMenu/UserMenu'
+import UserMenu from './UserMenu/UserMenu'
+import LengMenu from './LengMenu/LengMenu'
+import NotificationMenu from './NotificationMenu/NotificationMenu'
 
 const RapidTools = () => {
 
@@ -7,13 +9,13 @@ const RapidTools = () => {
         <div className="container-head-tools">
             <div className='container-rapid-tools'>
                 <div className='tool tool-leng'>
-                    <AccountMenu />
+                    <LengMenu />
+                </div>
+                <div className='tool tool-notification'>
+                    <NotificationMenu />
                 </div>
                 <div className='tool tool-user'>
-                    <AccountMenu />
-                </div>
-                <div className='tool tool-logOut'>
-                    <AccountMenu />
+                    <UserMenu />
                 </div>
             </div>
         </div>
