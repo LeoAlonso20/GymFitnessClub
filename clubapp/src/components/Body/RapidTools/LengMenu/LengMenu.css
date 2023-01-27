@@ -14,6 +14,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.menu-user-amp{
     width: 180px;
 }
 
@@ -29,6 +32,11 @@
     color: rgb(33, 43, 54);
 }
 
+.leng-text{
+    position: relative;
+    left: 3em;
+}
+
 .email-user{
     font-weight: 400;
     color: rgb(99, 115, 129);
@@ -41,4 +49,6 @@
 
 .img-leng{
     transform: scale(0.2);
+    position:absolute;
+    left: -3.5em;
 }
