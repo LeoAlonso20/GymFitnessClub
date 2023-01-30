@@ -1,20 +1,45 @@
 import './BodyClientes.css'
-import { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Animated } from 'react-animated-css'
 import NavContext from '../../../context/navContext'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 import TextField from '@mui/material/TextField'
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2'
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import dayjs from 'dayjs'
 
 const BodyClientes = () => {
 
     const { navState } = useContext(NavContext);
 
-    const { register, handleSubmit, reset } = useForm()
+    const [date, setDate] = useState(dayjs(new Date()));
+
+    const { control, handleSubmit, reset } = useForm({
+        defaultValues: {
+            firstName: '',
+            lastName: '',
+            idNumber: '',
+            birth: '',
+            address: '',
+            phone: '',
+            gender: ''
+        }
+    })
 
     const onSubmit = data => {
-        // console.log(data)
-        // reset()
+        console.log(data)
+        reset()
+    }
+    
+    //Ver como solucionar lo de que cuando selecciono la fecha con el mouse no lo toma el form
+
+    const handleDateChange = newValue => {
+        setDate(newValue)
+        console.log(newValue)
     }
 
     return (
@@ -30,21 +55,59 @@ const BodyClientes = () => {
                                 Texto provisional hasta que se encuentre que descripción poner en esta sección.
                                 La idea es algo resumido, que igualmente ocupe un buen espacio además de sumarle alguna imagen al bloque.
                             </p>
-                        </div>2
+                        </div>
                     </div>
                 </div>
                 <div className={`container-add-cliente ${navState.open ? '' : 'add-dec'}`}>
                     <p className='text-title title-add'>Nuevo Cliente</p>
                     <form className='form-add-cliente' onSubmit={handleSubmit(onSubmit)}>
                         <Grid2 container rowSpacing={3} columnSpacing={2}>
-                            <Grid2 md={3}><TextField sx={{width: '100%'}} id="outlined-basic" label='Nombre' variant='outlined' className='input-form'></TextField></Grid2>
-                            <Grid2 md={3}><TextField sx={{width: '100%'}} id="outlined-basic" label='Apellido' variant='outlined'></TextField></Grid2>
-                            <Grid2 md={3}><TextField sx={{width: '100%'}} id="outlined-basic" label='D.N.I' variant='outlined'></TextField></Grid2>
-                            <Grid2 md={3}><TextField sx={{width: '100%'}} id="outlined-basic" label='Fecha de nacimiento' variant='outlined'></TextField></Grid2>
-                            <Grid2 md={4}><TextField sx={{width: '100%'}} id="outlined-basic" label='Dirección' variant='outlined'></TextField></Grid2>
-                            <Grid2 md={4}><TextField sx={{width: '100%'}} id="outlined-basic" label='Teléfono' variant='outlined'></TextField></Grid2>
-                            <Grid2 md={4}><TextField sx={{width: '100%'}} id="outlined-basic" label='Sexo' variant='outlined'></TextField></Grid2>
+                            <Grid2 md={3}>
+                                <Controller name='firstName' control={control} render={({field}) => 
+                                    <TextField {...field} sx={{width: '100%'}} id="outlined-basic" label='Nombre' variant='outlined' className='input-form'></TextField>}>
+                                </Controller>       
+                            </Grid2>
+                            <Grid2 md={3}>
+                                <Controller name='lastName' control={control} render={({field}) => 
+                                    <TextField {...field} sx={{width: '100%'}} id="outlined-basic" label='Apellido' variant='outlined' className='input-form'></TextField>}>
+                                </Controller> 
+                            </Grid2>
+                            <Grid2 md={3}>
+                                <Controller name='idNumber' control={control} render={({field}) => 
+                                        <TextField {...field} sx={{width: '100%'}} id="outlined-basic" label='D.N.I' variant='outlined' className='input-form'></TextField>}>
+                                </Controller> 
+                            </Grid2>
+                            <Grid2 md={3}>
+                                <Controller name='birth' control={control} render={({field}) => 
+                                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                            <DesktopDatePicker inputFormat="DD/MM/YYYY" value={date} onChange={handleDateChange} label='Fecha de nacimiento' renderInput={(params) => <TextField {...params} {...field} sx={{width: '100%'}} id="outlined-basic"  variant='outlined' className='input-form'></TextField>}></DesktopDatePicker>
+                                        </LocalizationProvider>}>
+                                </Controller> 
+                            </Grid2>
+                            <Grid2 md={4}>
+                                <Controller name='address' control={control} render={({field}) => 
+                                        <TextField {...field} sx={{width: '100%'}} id="outlined-basic" label='Dirección' variant='outlined' className='input-form'></TextField>}>
+                                </Controller> 
+                            </Grid2>
+                            <Grid2 md={4}>
+                                <Controller name='phone' control={control} render={({field}) => 
+                                        <TextField {...field} sx={{width: '100%'}} id="outlined-basic" label='Teléfono' variant='outlined' className='input-form'></TextField>}>
+                                </Controller> 
+                            </Grid2>
+                            <Grid2 md={4}>
+                                <Controller name='gender' control={control} render={({field}) => 
+                                            <FormControl fullWidth>
+                                                <InputLabel id='gender-select-id'>Sexo</InputLabel>
+                                            <Select {...field} sx={{width: '100%'}} id="outlined-basic" labelId='gender-select-id' label='Sexo'>
+                                                <MenuItem value={1}>Femenino</MenuItem>
+                                                <MenuItem value={2}>Masculino</MenuItem>
+                                            </Select>
+                                            </FormControl>
+                                            }>
+                                </Controller> 
+                            </Grid2>
                         </Grid2>
+                        <button className='button-submit'>enviar</button>
                     </form>
                 </div>
                 <div className={`container-table-clientes ${navState.open ? '' : 'table-dec'}`}>
@@ -56,4 +119,4 @@ const BodyClientes = () => {
 
 }
 
-export default BodyClientes
+export default React.memo(BodyClientes)

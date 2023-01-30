@@ -28,7 +28,7 @@ const OptionsNav = () => {
                 <div className="options">
                     {options.map( ([idOption, {iconOption}, nameOption]) => {
                         return(
-                        <ButtonOption  key={idOption} id={idOption} icon={iconOption} name={nameOption}></ButtonOption>
+                        <ButtonOption key={idOption} id={idOption} icon={iconOption} name={nameOption}></ButtonOption>
                     )
                     } )}
 
