@@ -1,3 +1,4 @@
+import React from 'react'
 import './RapidTools.css'
 import UserMenu from './UserMenu/UserMenu'
 import LengMenu from './LengMenu/LengMenu'
@@ -23,4 +24,4 @@ const RapidTools = () => {
 
 }
 
-export default RapidTools
+export default React.memo(RapidTools)

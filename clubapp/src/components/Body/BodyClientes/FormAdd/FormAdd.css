@@ -1,0 +1,17 @@
+/* Clases formulario add cliente */
+
+.form-add-cliente{
+    position: absolute;
+    left: 8em;
+    top: 4.5em;
+    width: 80%;
+}
+
+/* Boton add cliente1 */
+
+.button-add{
+    position: absolute;
+    right: 0em;
+    bottom: -2.9em;
+    transition: all 0.2s ease;
+}

@@ -6,6 +6,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/roboto": "^4.5.8",
+    "@hookform/resolvers": "^2.9.10",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.6",
     "@mui/x-date-pickers": "^5.0.16",
@@ -18,8 +19,10 @@
     "react-head": "^3.4.2",
     "react-hook-form": "^7.42.1",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4",
-    "wouter": "^2.9.2"
+    "wouter": "^2.9.2",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
