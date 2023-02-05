@@ -15,3 +15,11 @@
     bottom: -2.9em;
     transition: all 0.2s ease;
 }
+
+/* Clases snackbar */
+
+.text-snackbar{
+    color: rgb(33, 43, 54);
+    font-weight: 400;
+    line-height: 1.5em;
+}

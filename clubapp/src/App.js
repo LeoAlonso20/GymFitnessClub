@@ -8,17 +8,16 @@ import BodyContainer from './components/Body/BodyContainer/BodyContainer'
 import NavProvider from './context/navProvider';
 import {HeadProvider, Title} from 'react-head';
 
-
 function App() {
 
   return (
     <HeadProvider>
       <Title>Home</Title>
       <NavProvider>
-        <div className="App">
-          <HzNav></HzNav>
-          <BodyContainer></BodyContainer>
-        </div>
+          <div className="App">
+            <HzNav></HzNav>
+            <BodyContainer></BodyContainer>
+          </div>
       </NavProvider>
     </HeadProvider>
   );
