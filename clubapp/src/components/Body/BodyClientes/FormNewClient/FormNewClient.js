@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import './FormAdd.css'
+import React, { useState, useRef } from 'react'
+import './FormNewClient.css'
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import { useForm, Controller } from 'react-hook-form'
-import { InputLabel, MenuItem, Button, Snackbar, Alert, Slide} from '@mui/material'
+import { InputLabel, MenuItem, Button} from '@mui/material'
 import { TextFieldCustom, FormControlCustom, SelectCustom } from '../../../Shared/StyledComponents'
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -11,6 +11,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import dayjs from 'dayjs';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup'
+import Snack from '../../../Shared/Snack'
 
 const schema = yup.object({
     firstName: yup.string().required(),
@@ -22,19 +23,13 @@ const schema = yup.object({
     gender: yup.string().required()
 }).required()
 
-const TransitionTop = (props) => {
-    return <Slide {...props} direction='up' />
-}
-
-const FormAdd = () => {
+const FormNewClient = () => {
 
     const [date, setDate] = useState(null);
 
-    const [snack, setSnack] = useState({
-        open: false,
-        severity: 'success',
-        message: ''
-    })
+    const snackRef = useRef()
+
+    
 
     const { control, handleSubmit, reset, setValue, formState: {errors} } = useForm({
         defaultValues: {
@@ -53,23 +48,19 @@ const FormAdd = () => {
         reset()
         setDate(null)
         setValue('birth', null)
-        setSnack({open: true, severity: 'success', message: 'Cliente agregado'})
-    }
-
-    const handleDateChange = newValue => {
-        setDate(newValue)
-        setValue('birth', dayjs(newValue).toDate())
-    }
-    
-    const handleClose = () => {
-        setSnack({...snack, open: false})
+        snackRef.current.setSnack({open: true, severity: 'success', message: 'Cliente agregado con éxito'})
     }
 
     const handleClick  = () => {
         if( errors.firstName || errors.lastName || errors.birth || 
             errors.idNumber || errors.gender || errors.address || errors.phone ){
-                setSnack({open: true, severity: 'error', message: 'Complete todos los campos'})
+                snackRef.current.setSnack({open: true, severity: 'error', message: 'Complete todos los campos'})
         }
+    }
+
+    const handleDateChange = newValue => {
+        setDate(newValue)
+        setValue('birth', dayjs(newValue).toDate())
     }
 
     return (
@@ -78,39 +69,39 @@ const FormAdd = () => {
                             <Grid2 container rowSpacing={3} columnSpacing={2}>
                                 <Grid2 md={3}>
                                     <Controller name='firstName' control={control} render={({field}) => 
-                                        <TextFieldCustom error={errors.firstName} {...field} sx={{width: '100%'}} id="outlined-basic" label='Nombre' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                        <TextFieldCustom error={typeof errors.firstName !== 'undefined'} {...field} sx={{width: '100%'}} id="outlined-basic" label='Nombre' variant='outlined' className='input-form'></TextFieldCustom>}>
                                     </Controller>       
                                 </Grid2>
                                 <Grid2 md={3}>
                                     <Controller name='lastName' control={control} render={({field}) => 
-                                        <TextFieldCustom error={errors.lastName} {...field} sx={{width: '100%'}} id="outlined-basic" label='Apellido' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                        <TextFieldCustom error={typeof errors.lastName !== 'undefined'} {...field} sx={{width: '100%'}} id="outlined-basic" label='Apellido' variant='outlined' className='input-form'></TextFieldCustom>}>
                                     </Controller> 
                                 </Grid2>
                                 <Grid2 md={3}>
                                     <Controller name='idNumber' control={control} render={({field}) => 
-                                        <TextFieldCustom error={errors.idNumber} {...field} type={'number'} sx={{width: '100%'}} id="outlined-basic" label='D.N.I' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                        <TextFieldCustom error={typeof errors.idNumber !== 'undefined'} {...field} type={'number'} sx={{width: '100%'}} id="outlined-basic" label='D.N.I' variant='outlined' className='input-form'></TextFieldCustom>}>
                                     </Controller> 
                                 </Grid2>
                                 <Grid2 md={3}>
                                     <Controller name='birth' control={control} render={({field}) => 
                                             <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="es">
-                                                <DesktopDatePicker inputFormat="DD/MM/YYYY" value={date} onChange={handleDateChange} label='Fecha de nacimiento' renderInput={(params) => <TextFieldCustom {...params} sx={{width: '100%'}} error={errors.birth} {...field} id="outlined-basic"  variant='outlined' className='input-form'></TextFieldCustom>}></DesktopDatePicker>
+                                                <DesktopDatePicker inputFormat="DD/MM/YYYY" value={date} onChange={handleDateChange} label='Fecha de nacimiento' renderInput={(params) => <TextFieldCustom {...params} sx={{width: '100%'}} error={typeof errors.birth !== 'undefined'} {...field} id="outlined-basic"  variant='outlined' className='input-form'></TextFieldCustom>}></DesktopDatePicker>
                                             </LocalizationProvider>}>
                                     </Controller> 
                                 </Grid2>
                                 <Grid2 md={4}>
                                     <Controller name='address' control={control} render={({field}) => 
-                                        <TextFieldCustom error={errors.address} {...field} sx={{width: '100%'}} id="outlined-basic" label='Dirección' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                        <TextFieldCustom error={typeof errors.address !== 'undefined'} {...field} sx={{width: '100%'}} id="outlined-basic" label='Dirección' variant='outlined' className='input-form'></TextFieldCustom>}>
                                     </Controller> 
                                 </Grid2>
                                 <Grid2 md={4}>
                                     <Controller name='phone' control={control} render={({field}) => 
-                                        <TextFieldCustom error={errors.phone} {...field} type={'number'} sx={{width: '100%'}} id="outlined-basic" label='Teléfono' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                        <TextFieldCustom error={typeof errors.phone !== 'undefined'} {...field} type={'number'} sx={{width: '100%'}} id="outlined-basic" label='Teléfono' variant='outlined' className='input-form'></TextFieldCustom>}>
                                     </Controller> 
                                 </Grid2>
                                 <Grid2 md={4}>
                                     <Controller name='gender' control={control} render={({field}) => 
-                                                <FormControlCustom fullWidth error={errors.gender}>
+                                                <FormControlCustom fullWidth error={typeof errors.gender !== 'undefined'}>
                                                     <InputLabel id='gender-select-id' className='input-label'>Sexo</InputLabel>
                                                 <SelectCustom {...field} sx={{width: '100%', textAlign: 'start'}} id="outlined-basic" labelId='gender-select-id' label='Sexo'>
                                                     <MenuItem value={1}>Femenino</MenuItem>
@@ -127,19 +118,9 @@ const FormAdd = () => {
                                 </Button>
                             </div>
                         </form> 
-                        <Snackbar   anchorOrigin={{vertical: 'bottom', horizontal: 'left'}} 
-                                    open={snack.open} 
-                                    key={'leftbottom'} 
-                                    onClose={handleClose} 
-                                    autoHideDuration={6000}
-                                    TransitionComponent={TransitionTop}
-                                    >
-                                        <Alert onClose={handleClose} severity={snack.severity} sx={{ width: '100%' }}>
-                                            <p className='text-snackbar'>{snack.message}</p>
-                                        </Alert>
-                        </Snackbar>
+                        <Snack ref={snackRef} />
                     </>
     )
 }
 
-export default React.memo(FormAdd)
+export default React.memo(FormNewClient)
