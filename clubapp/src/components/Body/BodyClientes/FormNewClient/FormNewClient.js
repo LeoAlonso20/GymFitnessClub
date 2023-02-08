@@ -20,7 +20,8 @@ const schema = yup.object({
     birth: yup.date().required(),
     address: yup.string().required(),
     phone: yup.number().required(),
-    gender: yup.string().required()
+    gender: yup.string().required(),
+    email: yup.string().required()
 }).required()
 
 const FormNewClient = () => {
@@ -29,9 +30,7 @@ const FormNewClient = () => {
 
     const snackRef = useRef()
 
-    
-
-    const { control, handleSubmit, reset, setValue, formState: {errors} } = useForm({
+    const { control, handleSubmit, reset, setValue, formState: {errors}, clearErrors } = useForm({
         defaultValues: {
             firstName: '',
             lastName: '',
@@ -39,12 +38,14 @@ const FormNewClient = () => {
             birth: '',
             address: '',
             phone: '',
-            gender: ''
+            gender: '',
+            email: ''
         },
         resolver: yupResolver(schema)
     })
 
     const onSubmit = data => {
+        console.log(data)
         reset()
         setDate(null)
         setValue('birth', null)
@@ -56,6 +57,13 @@ const FormNewClient = () => {
             errors.idNumber || errors.gender || errors.address || errors.phone ){
                 snackRef.current.setSnack({open: true, severity: 'error', message: 'Complete todos los campos'})
         }
+    }
+
+    const handleCancel = () => {
+        clearErrors()
+        reset()
+        setDate(null)
+        setValue('birth', null)
     }
 
     const handleDateChange = newValue => {
@@ -89,17 +97,7 @@ const FormNewClient = () => {
                                             </LocalizationProvider>}>
                                     </Controller> 
                                 </Grid2>
-                                <Grid2 md={4}>
-                                    <Controller name='address' control={control} render={({field}) => 
-                                        <TextFieldCustom error={typeof errors.address !== 'undefined'} {...field} sx={{width: '100%'}} id="outlined-basic" label='Dirección' variant='outlined' className='input-form'></TextFieldCustom>}>
-                                    </Controller> 
-                                </Grid2>
-                                <Grid2 md={4}>
-                                    <Controller name='phone' control={control} render={({field}) => 
-                                        <TextFieldCustom error={typeof errors.phone !== 'undefined'} {...field} type={'number'} sx={{width: '100%'}} id="outlined-basic" label='Teléfono' variant='outlined' className='input-form'></TextFieldCustom>}>
-                                    </Controller> 
-                                </Grid2>
-                                <Grid2 md={4}>
+                                <Grid2 md={3}>
                                     <Controller name='gender' control={control} render={({field}) => 
                                                 <FormControlCustom fullWidth error={typeof errors.gender !== 'undefined'}>
                                                     <InputLabel id='gender-select-id' className='input-label'>Sexo</InputLabel>
@@ -111,11 +109,30 @@ const FormNewClient = () => {
                                                 }>
                                     </Controller> 
                                 </Grid2>
+                                <Grid2 md={3}>
+                                    <Controller name='address' control={control} render={({field}) => 
+                                        <TextFieldCustom error={typeof errors.address !== 'undefined'} {...field} sx={{width: '100%'}} id="outlined-basic" label='Dirección' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                    </Controller> 
+                                </Grid2>
+                                <Grid2 md={3}>
+                                    <Controller name='phone' control={control} render={({field}) => 
+                                        <TextFieldCustom error={typeof errors.phone !== 'undefined'} {...field} type={'number'} sx={{width: '100%'}} id="outlined-basic" label='Teléfono' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                    </Controller> 
+                                </Grid2>
+                                <Grid2 md={3}>
+                                    <Controller name='email' control={control} render={({field}) => 
+                                        <TextFieldCustom error={typeof errors.phone !== 'undefined'} {...field} type={'text'} sx={{width: '100%'}} id="outlined-basic" label='Email' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                    </Controller> 
+                                </Grid2>
                             </Grid2>
                             <div className='button-add'>
-                                <Button type='submit' sx={{backgroundColor: 'inherit', color: 'rgb(33, 43, 54)', fontSize: '15px'}} aria-label="add" onClick={handleClick}>
+                                <Button type='submit' sx={{backgroundColor: 'inherit', color: 'rgb(33, 43, 54)', fontSize: '15px',borderEndEndRadius: '0', borderTopRightRadius: '0', borderRight: 'solid 1px rgb(33, 43, 54)'}} aria-label="add" onClick={handleCancel}>
+                                    Cancelar
+                                </Button>
+                                <Button type='submit' sx={{backgroundColor: 'inherit', color: 'rgb(33, 43, 54)', fontSize: '15px', borderStartStartRadius: '0', borderBottomLeftRadius: '0'}} aria-label="add" onClick={handleClick}>
                                     Agregar
                                 </Button>
+                                
                             </div>
                         </form> 
                         <Snack ref={snackRef} />

@@ -1,5 +1,5 @@
 import './TableClients.css'
-import { useState } from 'react';
+import React ,{ useState } from 'react';
 import  PropTypes  from 'prop-types';
 import { useTheme } from '@emotion/react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination, 
@@ -108,14 +108,14 @@ const TableClients = () => {
       };
 
     return (
-        <TableContainer sx={{position: 'relative', top: '80px', width: '80%', maxHeight: '80%'}}>
+        <TableContainer sx={{position: 'relative', top: '80px', width: '86%', maxHeight: '80%'}}>
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
         <TableHead>
             <TableRow>
-                <TableCell sx={{fontSize: '17px'}}>Persona</TableCell>
-                <TableCell align='right' sx={{fontSize: '17px'}}>Telefono</TableCell>
+                <TableCell sx={{fontSize: '17px'}}>Nombre completo</TableCell>
+                <TableCell align='right' sx={{fontSize: '17px'}}>Teléfono</TableCell>
                 <TableCell align='right' sx={{fontSize: '17px'}}>Correo</TableCell>
-                <TableCell align='right' sx={{fontSize: '17px'}}>Direccion</TableCell>
+                <TableCell align='right' sx={{fontSize: '17px'}}>Dirección</TableCell>
                 <TableCell align='right' sx={{fontSize: '17px'}}>Estado</TableCell>
            </TableRow>
         </TableHead>
@@ -152,7 +152,7 @@ const TableClients = () => {
         <TableFooter>
           <TableRow>
             <TablePagination
-              rowsPerPageOptions={[5, 10, 25, { label: 'Todos', value: -1 }]}
+              rowsPerPageOptions={[5, 10, 25, { label: 'Todas', value: -1 }]}
               colSpan={6}
               count={rows.length}
               rowsPerPage={rowsPerPage}
@@ -166,6 +166,7 @@ const TableClients = () => {
               onPageChange={handleChangePage}
               onRowsPerPageChange={handleChangeRowsPerPage}
               ActionsComponent={TablePaginationActions}
+              labelRowsPerPage='Filas a mostrar:'
             />
           </TableRow>
         </TableFooter>
@@ -175,4 +176,4 @@ const TableClients = () => {
 
 }
 
-export default TableClients
+export default React.memo(TableClients)

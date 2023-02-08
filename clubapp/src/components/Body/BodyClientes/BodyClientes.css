@@ -1,76 +1,56 @@
-/* Descripcion de la opcion */
-.container-option-description{
-    position: relative;
-    display: inline-block;
-    background-color: rgb(0, 0, 0, 0.925);
-    width: 450px;
-    min-width: 300px;
-    height: 33%;
-    border-radius: 12px;
-    margin-right: 25px;
-    transition: all 0.2s ease;
-    margin-bottom: 25px;
-}
-
-.container-content{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    flex-direction: column;
-}
-
-.container-title-description{
-    position: relative;
-    height: auto;
-    width: 100%;
-    top: 2em;
-}
-
-.container-info-description{
-    position: relative;
-    width: 70%;
-    height: auto;
-    top: 3em;
-}
 
 /* Add cliente */
 .container-add-cliente{
     display: inline-block;
     position: relative;
-    width: 1200px;
+    width: 100%;
     min-width: 300px;
-    height: 33%;
+    height: 100%;
     border-radius: 12px;
     transition: all 0.2s ease;
     box-shadow: rgb(145 158 171 / 20%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px;
     background-color: rgb(255, 255, 255);
-    margin-bottom: 25px;
 }
 
-.add-dec{
+/* .add-dec{
     width: 1020px;
-}
+} */
 
 /* Tabla clientes */
 
 .container-table-clientes{
     display: inline-block;
     position: relative;
-    width: 1675px;
+    width: 100%;
     min-width: 300px;
-    height: 63%;
+    height: 100%;
     border-radius: 12px;
     transition: all 0.2s ease;
     box-shadow: rgb(145 158 171 / 20%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px;
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
+    margin-right: 25px;
 }
 
-.table-dec{
+/* .table-dec{
     width: 1500px;
+} */
+
+/* Buscador de clientes */
+
+.container-search-clientes{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    min-width: 300px;
+    height: 100%;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    box-shadow: rgb(145 158 171 / 20%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
 }
 
 /* Texto de cada bloque de accion */

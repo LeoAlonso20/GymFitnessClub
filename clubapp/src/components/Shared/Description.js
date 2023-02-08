@@ -1,5 +1,6 @@
 import React, {useContext} from "react"
 import NavContext from "../../context/navContext";
+import './Description.css'
 
 const Description = ({title, description}) => {
 
