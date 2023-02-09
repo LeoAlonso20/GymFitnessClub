@@ -29,7 +29,8 @@
 
 .container-info-description{
     position: relative;
-    width: 70%;
+    width: auto;
+    max-width: 80%;
     height: auto;
     top: 3em;
 }

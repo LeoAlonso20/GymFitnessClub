@@ -1,56 +1,38 @@
 import './BodyClientes.css'
-import React, { useContext } from 'react'
-import NavContext from '../../../context/navContext'
+import React from 'react'
 import FormNewClient from './FormNewClient/FormNewClient'
 import TableClients from './TableClients/TableClients'
 import Description from '../../Shared/Description'
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2'
-
+import { StyledContainer } from '../../Shared/StyledComponents'
 const optionDescription = 'Texto provisional hasta que se encuentre que descripción poner en esta sección. La idea es algo resumido, que igualmente ocupe un buen espacio además de sumarle alguna imagen al bloque.'
 
 const BodyClientes = () => {
 
-    const { navState } = useContext(NavContext);
-
     return (
-            // Ver forma de no tener que usar la propiedad left
-            <Grid2 container spacing={2} sx={{width: '95%', position: 'relative', left: '5em'}}>
+        //Ver de transformar el componente description en un styledComponent
+            <Grid2 container spacing={2} sx={{width: '90%', position: 'relative', left: '7.5em'}}>
                 <Grid2 md={3.5} sx={{height: '38%'}}>
                     <Description title={'CLIENTES'} description={optionDescription} />
                 </Grid2>
                 <Grid2 md={8.5} sx={{height: '38%'}}>
-                    <div className={`container-add-cliente ${navState.open ? '' : 'add-dec'}`}>
+                    <StyledContainer sx={{display: 'flex', justifyContent: 'center'}}>
                         <p className='text-title title-add'>Nuevo Cliente</p>
                         <FormNewClient />
-                    </div>
+                    </StyledContainer>
                 </Grid2>
                 <Grid2 md={8} sx={{height: '62%'}}>
-                    <div className={`container-table-clientes ${navState.open ? '' : 'table-dec'}`}>
+                    <StyledContainer sx={{display: 'flex', justifyContent: 'center'}}>
                         <p className='text-title title-table'>Lista de Clientes</p>
                         <TableClients />
-                    </div>
+                    </StyledContainer>
                 </Grid2>
                 <Grid2 md={4} sx={{height: '62%'}}>
-                    <div className={`container-search-clientes ${navState.open ? '' : 'search-dec'}`}>
+                    <StyledContainer>
                         <p className='text-title title-table'>Lista de Clientes</p>
-                    </div>
+                    </StyledContainer>
                 </Grid2>
-            </Grid2>
-            // <div >
-            //     <Description title={'CLIENTES'} description={optionDescription} />
-            //     <div className={`container-add-cliente ${navState.open ? '' : 'add-dec'}`}>
-            //         <p className='text-title title-add'>Nuevo Cliente</p>
-            //         <FormNewClient />
-            //     </div>
-            //     <div className={`container-table-clientes ${navState.open ? '' : 'table-dec'}`}>
-            //         <p className='text-title title-table'>Lista de Clientes</p>
-            //         <TableClients />
-            //     </div>
-            //     {/* <div className={`container-search-clientes ${navState.open ? '' : 'search-dec'}`}>
-            //         <p className='text-title title-table'>Lista de Clientes</p>
-            //     </div> */}
-            // </div>
-            
+            </Grid2>    
     )
 
 }

@@ -3,7 +3,7 @@ import './FormNewClient.css'
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import { useForm, Controller } from 'react-hook-form'
 import { InputLabel, MenuItem, Button} from '@mui/material'
-import { TextFieldCustom, FormControlCustom, SelectCustom } from '../../../Shared/StyledComponents'
+import { StyledTextField, StyledFormControl, StyledSelect } from '../../../Shared/StyledComponents'
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import "dayjs/locale/es";
@@ -45,7 +45,6 @@ const FormNewClient = () => {
     })
 
     const onSubmit = data => {
-        console.log(data)
         reset()
         setDate(null)
         setValue('birth', null)
@@ -77,51 +76,51 @@ const FormNewClient = () => {
                             <Grid2 container rowSpacing={3} columnSpacing={2}>
                                 <Grid2 md={3}>
                                     <Controller name='firstName' control={control} render={({field}) => 
-                                        <TextFieldCustom error={typeof errors.firstName !== 'undefined'} {...field} sx={{width: '100%'}} id="outlined-basic" label='Nombre' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                        <StyledTextField error={typeof errors.firstName !== 'undefined'} {...field} sx={{width: '100%'}} id="outlined-basic" label='Nombre' variant='outlined' className='input-form'></StyledTextField>}>
                                     </Controller>       
                                 </Grid2>
                                 <Grid2 md={3}>
                                     <Controller name='lastName' control={control} render={({field}) => 
-                                        <TextFieldCustom error={typeof errors.lastName !== 'undefined'} {...field} sx={{width: '100%'}} id="outlined-basic" label='Apellido' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                        <StyledTextField error={typeof errors.lastName !== 'undefined'} {...field} sx={{width: '100%'}} id="outlined-basic" label='Apellido' variant='outlined' className='input-form'></StyledTextField>}>
                                     </Controller> 
                                 </Grid2>
                                 <Grid2 md={3}>
                                     <Controller name='idNumber' control={control} render={({field}) => 
-                                        <TextFieldCustom error={typeof errors.idNumber !== 'undefined'} {...field} type={'number'} sx={{width: '100%'}} id="outlined-basic" label='D.N.I' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                        <StyledTextField error={typeof errors.idNumber !== 'undefined'} {...field} type={'number'} sx={{width: '100%'}} id="outlined-basic" label='D.N.I' variant='outlined' className='input-form'></StyledTextField>}>
                                     </Controller> 
                                 </Grid2>
                                 <Grid2 md={3}>
                                     <Controller name='birth' control={control} render={({field}) => 
                                             <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="es">
-                                                <DesktopDatePicker inputFormat="DD/MM/YYYY" value={date} onChange={handleDateChange} label='Fecha de nacimiento' renderInput={(params) => <TextFieldCustom {...params} sx={{width: '100%'}} error={typeof errors.birth !== 'undefined'} {...field} id="outlined-basic"  variant='outlined' className='input-form'></TextFieldCustom>}></DesktopDatePicker>
+                                                <DesktopDatePicker inputFormat="DD/MM/YYYY" value={date} onChange={handleDateChange} label='Nacimiento' renderInput={(params) => <StyledTextField {...params} sx={{width: '100%'}} error={typeof errors.birth !== 'undefined'} {...field} id="outlined-basic"  variant='outlined' className='input-form'></StyledTextField>}></DesktopDatePicker>
                                             </LocalizationProvider>}>
                                     </Controller> 
                                 </Grid2>
                                 <Grid2 md={3}>
                                     <Controller name='gender' control={control} render={({field}) => 
-                                                <FormControlCustom fullWidth error={typeof errors.gender !== 'undefined'}>
+                                                <StyledFormControl fullWidth error={typeof errors.gender !== 'undefined'}>
                                                     <InputLabel id='gender-select-id' className='input-label'>Sexo</InputLabel>
-                                                <SelectCustom {...field} sx={{width: '100%', textAlign: 'start'}} id="outlined-basic" labelId='gender-select-id' label='Sexo'>
+                                                <StyledSelect {...field} sx={{width: '100%', textAlign: 'start'}} id="outlined-basic" labelId='gender-select-id' label='Sexo'>
                                                     <MenuItem value={1}>Femenino</MenuItem>
                                                     <MenuItem value={2}>Masculino</MenuItem>
-                                                </SelectCustom>
-                                                </FormControlCustom>
+                                                </StyledSelect>
+                                                </StyledFormControl>
                                                 }>
                                     </Controller> 
                                 </Grid2>
                                 <Grid2 md={3}>
                                     <Controller name='address' control={control} render={({field}) => 
-                                        <TextFieldCustom error={typeof errors.address !== 'undefined'} {...field} sx={{width: '100%'}} id="outlined-basic" label='Dirección' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                        <StyledTextField error={typeof errors.address !== 'undefined'} {...field} sx={{width: '100%'}} id="outlined-basic" label='Dirección' variant='outlined' className='input-form'></StyledTextField>}>
                                     </Controller> 
                                 </Grid2>
                                 <Grid2 md={3}>
                                     <Controller name='phone' control={control} render={({field}) => 
-                                        <TextFieldCustom error={typeof errors.phone !== 'undefined'} {...field} type={'number'} sx={{width: '100%'}} id="outlined-basic" label='Teléfono' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                        <StyledTextField error={typeof errors.phone !== 'undefined'} {...field} type={'number'} sx={{width: '100%'}} id="outlined-basic" label='Teléfono' variant='outlined' className='input-form'></StyledTextField>}>
                                     </Controller> 
                                 </Grid2>
                                 <Grid2 md={3}>
                                     <Controller name='email' control={control} render={({field}) => 
-                                        <TextFieldCustom error={typeof errors.phone !== 'undefined'} {...field} type={'text'} sx={{width: '100%'}} id="outlined-basic" label='Email' variant='outlined' className='input-form'></TextFieldCustom>}>
+                                        <StyledTextField error={typeof errors.phone !== 'undefined'} {...field} type={'text'} sx={{width: '100%'}} id="outlined-basic" label='Email' variant='outlined' className='input-form'></StyledTextField>}>
                                     </Controller> 
                                 </Grid2>
                             </Grid2>

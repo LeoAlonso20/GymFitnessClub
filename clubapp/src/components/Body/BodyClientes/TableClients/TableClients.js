@@ -116,7 +116,6 @@ const TableClients = () => {
                 <TableCell align='right' sx={{fontSize: '17px'}}>Teléfono</TableCell>
                 <TableCell align='right' sx={{fontSize: '17px'}}>Correo</TableCell>
                 <TableCell align='right' sx={{fontSize: '17px'}}>Dirección</TableCell>
-                <TableCell align='right' sx={{fontSize: '17px'}}>Estado</TableCell>
            </TableRow>
         </TableHead>
         <TableBody>
@@ -136,9 +135,6 @@ const TableClients = () => {
               </TableCell>
               <TableCell style={{ width: 160 }} align="right">
                 {row.carbs}
-              </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
-                {row.protein}
               </TableCell>
             </TableRow>
           ))}
