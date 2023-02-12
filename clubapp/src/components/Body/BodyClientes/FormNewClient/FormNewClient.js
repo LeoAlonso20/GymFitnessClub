@@ -125,7 +125,7 @@ const FormNewClient = () => {
                                 </Grid2>
                             </Grid2>
                             <div className='button-add'>
-                                <Button type='submit' sx={{backgroundColor: 'inherit', color: 'rgb(33, 43, 54)', fontSize: '15px',borderEndEndRadius: '0', borderTopRightRadius: '0', borderRight: 'solid 1px rgb(33, 43, 54)'}} aria-label="add" onClick={handleCancel}>
+                                <Button type='button' sx={{backgroundColor: 'inherit', color: 'rgb(33, 43, 54)', fontSize: '15px',borderEndEndRadius: '0', borderTopRightRadius: '0', borderRight: 'solid 1px rgb(33, 43, 54)'}} aria-label="add" onClick={handleCancel}>
                                     Cancelar
                                 </Button>
                                 <Button type='submit' sx={{backgroundColor: 'inherit', color: 'rgb(33, 43, 54)', fontSize: '15px', borderStartStartRadius: '0', borderBottomLeftRadius: '0'}} aria-label="add" onClick={handleClick}>

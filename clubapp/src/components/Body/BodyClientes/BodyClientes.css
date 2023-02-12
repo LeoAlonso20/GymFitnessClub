@@ -42,6 +42,14 @@
     opacity: 0.8;
 }
 
+/* Texto del bloque buscador */
+
+.text-search{
+    font-size: 1.1em;
+    left: 4.2em;
+    top: 1.2em;
+}
+
 /* medias querys */
 
 /* PUNTOS A TENER EN CUENTA (con ciertos margenes de pixeles)*/

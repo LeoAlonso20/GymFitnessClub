@@ -111,11 +111,11 @@ const TableClients = () => {
         <TableContainer sx={{position: 'relative', top: '80px', width: '86%', maxHeight: '80%'}}>
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
         <TableHead>
-            <TableRow>
-                <TableCell sx={{fontSize: '17px'}}>Nombre completo</TableCell>
-                <TableCell align='right' sx={{fontSize: '17px'}}>Teléfono</TableCell>
-                <TableCell align='right' sx={{fontSize: '17px'}}>Correo</TableCell>
-                <TableCell align='right' sx={{fontSize: '17px'}}>Dirección</TableCell>
+            <TableRow sx={{color: 'rgb(33, 43, 54)'}}>
+                <TableCell sx={{fontSize: '17px', color: 'rgb(33, 43, 54)'}}>Nombre completo</TableCell>
+                <TableCell align='right' sx={{fontSize: '17px', color: 'rgb(33, 43, 54)'}}>Teléfono</TableCell>
+                <TableCell align='right' sx={{fontSize: '17px', color: 'rgb(33, 43, 54)'}}>Correo</TableCell>
+                <TableCell align='right' sx={{fontSize: '17px', color: 'rgb(33, 43, 54)'}}>Dirección</TableCell>
            </TableRow>
         </TableHead>
         <TableBody>
@@ -124,16 +124,16 @@ const TableClients = () => {
             : rows
           ).map((row) => (
             <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
+              <TableCell component="th" scope="row" style={{color: 'rgb(33, 43, 54)'}}>
                 {row.name}
               </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
+              <TableCell style={{ width: 160, color: 'rgb(33, 43, 54)' }} align="right">
                 {row.calories}
               </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
+              <TableCell style={{ width: 160, color: 'rgb(33, 43, 54)' }} align="right">
                 {row.calories}
               </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
+              <TableCell style={{ width: 160, color: 'rgb(33, 43, 54)' }} align="right">
                 {row.carbs}
               </TableCell>
             </TableRow>
