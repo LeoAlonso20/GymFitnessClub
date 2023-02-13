@@ -13,16 +13,16 @@ const BodyClientes = () => {
 
     const elementRef = useRef()
 
-    useEffect(() => {
-        document.addEventListener('click', (event) => {
-            const isSearchBar = event.target.closest('#contSearch')
+    // useEffect(() => {
+    //     document.addEventListener('click', (event) => {
+    //         const isSearchBar = event.target.closest('#contSearch')
     
-            if( isSearchBar ) return;
+    //         if( isSearchBar ) return;
     
-            elementRef.current.handleClose()
-            event.preventDefault()
-        } )
-    }, [])
+    //         elementRef.current.handleClose()
+    //         event.preventDefault()
+    //     } )
+    // }, [])
 
     return (
         //Ver de transformar el componente description en un styledComponent

@@ -1,5 +1,5 @@
 import TextField from '@mui/material/TextField';
-import { FormControl, Select} from '@mui/material';
+import { Button, FormControl, Select} from '@mui/material';
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
@@ -61,5 +61,11 @@ export const StyledSelect = styled(Select)`
 export const StyledFormControl = styled(FormControl)`
     & label.Mui-focused {
         color: rgb(33, 43, 54);
+    }
+`
+
+export const StyledButton = styled(Button)`
+    &:hover{
+      background: red;
     }
 `
