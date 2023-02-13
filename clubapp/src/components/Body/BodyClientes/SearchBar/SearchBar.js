@@ -7,6 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import HorizontalRuleRoundedIcon from '@mui/icons-material/HorizontalRuleRounded';
 import { StyledInput } from '../../../Shared/StyledComponents';
 import SearchItem from './SearchItem/SearchItem';
+import { useForm, Controller } from 'react-hook-form';
 
 const clients = [
     {
@@ -74,9 +75,18 @@ const clients = [
     }
 ]
 
+
 const SearchBar = forwardRef((props, ref) => {
 
     const [open, setOpen] = useState(false)
+
+    const [ clientsResult, setClientsResult ] = useState([])
+
+    const { control, reset, getValues } = useForm({
+        defaultValues: {
+            keyword: ''
+        }
+    })
     
     const handleClick = () => {
         setOpen(!open)
@@ -84,6 +94,8 @@ const SearchBar = forwardRef((props, ref) => {
 
     const handleClose = () => {
         setOpen(false)
+        setClientsResult([])
+        reset()
     }
 
     useImperativeHandle(ref, () => {
@@ -92,7 +104,17 @@ const SearchBar = forwardRef((props, ref) => {
         }
     })
     
+    const handleKeyUp = () => {
+        const { keyword } = getValues()
 
+        setClientsResult([])
+
+        if( !keyword ) return
+
+        clients.map(client => `${client.firstName.toLowerCase()} ${client.lastName.toLowerCase()}`.includes(keyword.toLowerCase()) ? setClientsResult(prevClients => [...prevClients, client]) : '')
+    }
+
+    
     return (
         <>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', 
@@ -108,13 +130,15 @@ const SearchBar = forwardRef((props, ref) => {
                 </IconButton>
             </Box>
             <div className={`container-search ${open ? 'container-search-translate' : ''}`}>
-                <div className='search-item'>
+                <form className='search-item' >
                     <SearchIcon sx={{color: 'rgb(77, 77, 77, 0.7)', position: 'relative', left: '-0.3em'}} />
-                    <StyledInput placeholder='Buscar...'/>
-                </div>
+                    <Controller name='keyword' control={control} render={({field}) => 
+                        <StyledInput placeholder='Buscar...' {...field} onKeyUp={handleKeyUp}/>}>    
+                    </Controller>
+                </form>
                 {
                     open
-                        ? clients.slice(0, 6).map(client => {
+                        ? clientsResult.slice(0, 6).map(client => {
                             return <SearchItem key={client.idNumber} firstName={client.firstName} 
                                                lastName={client.lastName} gender={client.gender}
                                                payState={client.payState}/>                         
@@ -122,7 +146,7 @@ const SearchBar = forwardRef((props, ref) => {
                         
                         : ''
                 }
-                <div className={`button-close-search ${ clients.length === 0 ? 'button-close-search-position' : '' }`}>
+                <div className={`button-close-search ${ clientsResult.length === 0 ? 'button-close-search-position' : '' }`}>
                     <HorizontalRuleRoundedIcon sx={{color: 'rgb(77, 77, 77, 0.7)', cursor: 'pointer'}} onClick={handleClose}/>
                 </div>
             </div>
