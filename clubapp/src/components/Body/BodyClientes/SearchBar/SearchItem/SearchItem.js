@@ -2,7 +2,7 @@ import './SearchItem.css'
 import Face2TwoToneIcon from '@mui/icons-material/Face2TwoTone';
 import FaceTwoToneIcon from '@mui/icons-material/FaceTwoTone';
 
-const SearchItem = ({firstName, lastName, gender, payState}) => {
+const SearchItem = ({firstName, lastName, gender, payState, onClick}) => {
     const renderSwitch = (payState) => {
         switch(payState) {
             case 0:          
@@ -26,7 +26,7 @@ const SearchItem = ({firstName, lastName, gender, payState}) => {
     }
 
     return (
-        <div className='result-item'>
+        <div className='result-item' onClick={onClick}>
             {renderIcon(gender)}
             <div className='info-client'>
                 <p className='name-result-item'>{firstName} {lastName}</p>

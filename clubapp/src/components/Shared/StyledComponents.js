@@ -12,7 +12,7 @@ export const StyledContainer = styled.div`
   transition: all 0.2s ease;
   box-shadow: rgb(145 158 171 / 20%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px;
   background-color: rgb(255, 255, 255);
-  overflow-y:auto;
+  overflow-y:hidden;
   ${props => props.sx || ''}
 `;
 

@@ -1,0 +1,77 @@
+.container-info-client{
+    color: rgb(33, 43, 54);
+    width: 90%;
+    height: auto;
+    font-size: 1.2em;
+    position: absolute;
+    top: 0;
+}
+
+.client-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.client-info{
+    display: flex;
+    justify-content: center;
+}
+
+.icon-client{
+    position: absolute;
+    left: 0.5em;
+    text-align: start;
+}
+
+.icon-client-right{
+    left: 8.25em;
+}
+
+/* //////////////// */
+
+/* Clase para el nombre del cliente */
+
+.text-client-name{
+    width: 100%;
+    font-size: 1.375em;
+    position: relative;
+    top: 1em;
+    font-weight: 600;
+    margin-bottom: 2em;
+}
+
+/* Clase para los iconos */
+
+.container-icons-client{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    height: 16em;
+    width: 1.5em;
+    background-color: rgba(207, 6, 6, 0.16);
+    background-color: rgba(255, 233, 0, 0.16);
+    background-color: rgb(0, 187, 45, 0.16);
+    position: absolute;
+    left: 0em;
+}
+
+/* Clase para la data del cliente */
+
+.container-data-client{
+    width: auto;
+    display: inline-flex;
+    margin-left: 2.5em;
+    align-items: start;
+    background-color: transparent;
+}
+
+.text-data-client{
+    font-size: 1.05em;
+    font-weight: 500;
+}

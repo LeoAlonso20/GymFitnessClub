@@ -50,6 +50,51 @@
     top: 1.2em;
 }
 
+/* Contenido del bloque search */
+
+.container-content-search{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    top: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-text-desc-search{
+    width: 70%;
+    position: absolute;
+    top: 4em;
+    border-radius: 8px;
+    border: 2px dashed rgb(33, 43, 54);
+}
+
+.text-desc-search{
+    font-size: 1.2em;
+    color: rgb(33, 43, 54);
+    font-weight: 500;
+    position: relative;
+    padding: 1em;
+}
+
+/* Imagen del search */
+
+.container-img{
+    width: 50%;
+    height: auto;
+    position: absolute;
+    bottom: 3em;
+    right: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .img-search{
+} */
+
 /* medias querys */
 
 /* PUNTOS A TENER EN CUENTA (con ciertos margenes de pixeles)*/

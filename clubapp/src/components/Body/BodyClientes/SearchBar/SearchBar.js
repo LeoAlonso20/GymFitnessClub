@@ -76,11 +76,13 @@ const clients = [
 ]
 
 
-const SearchBar = forwardRef((props, ref) => {
+const SearchBar = forwardRef(({setClientSelected}, ref) => {
 
     const [open, setOpen] = useState(false)
 
     const [ clientsResult, setClientsResult ] = useState([])
+
+    // const [ clientSelected, setClientSelected ] = useState(null)
 
     const { control, reset, getValues } = useForm({
         defaultValues: {
@@ -96,6 +98,11 @@ const SearchBar = forwardRef((props, ref) => {
         setOpen(false)
         setClientsResult([])
         reset()
+    }
+
+    const handleSelectClient = (client) => {
+        setClientSelected(prevClient => client)
+        handleClose()
     }
 
     useImperativeHandle(ref, () => {
@@ -130,10 +137,10 @@ const SearchBar = forwardRef((props, ref) => {
                 </IconButton>
             </Box>
             <div className={`container-search ${open ? 'container-search-translate' : ''}`}>
-                <form className='search-item' >
+                <form className='search-item' action='#'>
                     <SearchIcon sx={{color: 'rgb(77, 77, 77, 0.7)', position: 'relative', left: '-0.3em'}} />
                     <Controller name='keyword' control={control} render={({field}) => 
-                        <StyledInput placeholder='Buscar...' {...field} onKeyUp={handleKeyUp}/>}>    
+                        <StyledInput placeholder='Buscar...' {...field} onKeyUp={handleKeyUp} />}>    
                     </Controller>
                 </form>
                 {
@@ -141,7 +148,7 @@ const SearchBar = forwardRef((props, ref) => {
                         ? clientsResult.slice(0, 6).map(client => {
                             return <SearchItem key={client.idNumber} firstName={client.firstName} 
                                                lastName={client.lastName} gender={client.gender}
-                                               payState={client.payState}/>                         
+                                               payState={client.payState} onClick={() => handleSelectClient(client)}/>                         
                         }) 
                         
                         : ''
