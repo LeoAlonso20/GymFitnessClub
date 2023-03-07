@@ -31,7 +31,7 @@ export default function AccountMenu() {
             aria-expanded={open ? 'true' : undefined}
           >
             <Avatar sx={{ width: 40, height: 40, backgroundColor: 'rgb(99, 115, 129, 0.12)' }}>
-              <PersonRoundedIcon sx={{color: 'rgb(99, 115, 129)'}} />
+              <PersonRoundedIcon sx={{color: 'rgb(33, 43, 54)'}} />
               </Avatar>
           </IconButton>
         </Tooltip>

@@ -32,7 +32,7 @@ export default function NotificationMenu() {
             aria-expanded={open ? 'true' : undefined}
           >
             <Avatar sx={{ width: 32, height: 32, backgroundColor: 'transparent' }}>
-              <NotificationsIcon sx={{color: 'rgb(99, 115, 129)'}} />
+              <NotificationsIcon sx={{color: 'rgb(33, 43, 54)'}} />
               </Avatar>
           </IconButton>
         </Tooltip>

@@ -35,13 +35,22 @@
 
 /* Clase para el nombre del cliente */
 
-.text-client-name{
-    width: 100%;
-    font-size: 1.375em;
+.container-client-name{
     position: relative;
     top: 1em;
-    font-weight: 600;
     margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+
+}
+
+.text-client-name{
+    font-size: 1.375em;
+    position: relative;
+    font-weight: 600;
+    display: inline;
+    margin-left: 1em;
+    text-align: start;
 }
 
 /* Clase para los iconos */
@@ -54,24 +63,42 @@
     border-radius: 20px;
     height: 16em;
     width: 1.5em;
-    background-color: rgba(207, 6, 6, 0.16);
+    /* background-color: rgba(207, 6, 6, 0.16);
     background-color: rgba(255, 233, 0, 0.16);
-    background-color: rgb(0, 187, 45, 0.16);
+    background-color: rgb(0, 187, 45, 0.16); */
     position: absolute;
-    left: 0em;
+    left: 0.5em;
 }
+
 
 /* Clase para la data del cliente */
 
 .container-data-client{
     width: auto;
     display: inline-flex;
-    margin-left: 2.5em;
+    margin-left: 3.5em;
     align-items: start;
     background-color: transparent;
 }
 
 .text-data-client{
-    font-size: 1.05em;
-    font-weight: 500;
+    font-size: 0.8em;
+    font-weight: 400;
+    line-height: 1.5em;
+    background-color: rgb(99, 115, 129, 0.08);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 0.3em;
+    min-width: 100%;
+    text-align: start;
+}
+
+/* Clases para el estado de pago */
+
+.state-pay-client{
+    position: absolute;
+    top: -1.6em;
+    width: 40%;
+    right: 1em;
+    border-radius: 20px;
 }

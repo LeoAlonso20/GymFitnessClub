@@ -4,11 +4,9 @@
   import Avatar from '@mui/material/Avatar';
   import Menu from '@mui/material/Menu';
   import MenuItem from '@mui/material/MenuItem';
-  import Divider from '@mui/material/Divider';
   import IconButton from '@mui/material/IconButton';
   import Tooltip from '@mui/material/Tooltip';
   import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
-  import { ListItemIcon } from '@mui/material';
 
 
   export default function LengMenu() {
@@ -33,7 +31,7 @@
               aria-expanded={open ? 'true' : undefined}
             >
               <Avatar sx={{ width: 32, height: 32, backgroundColor: 'transparent' }}>
-                <LanguageRoundedIcon sx={{color: 'rgb(99, 115, 129)'}} />
+                <LanguageRoundedIcon sx={{color: 'rgb(33, 43, 54)'}} />
                 </Avatar>
             </IconButton>
           </Tooltip>

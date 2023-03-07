@@ -1,0 +1,8 @@
+.option-container{
+    width: 82.5%;
+    height: 82.5%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 1em;
+}

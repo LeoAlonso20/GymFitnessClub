@@ -47,4 +47,11 @@
     bottom: 0.05em;
 }
 
+/* Contenedor de box search and close */
 
+.box-search-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20%;
+}

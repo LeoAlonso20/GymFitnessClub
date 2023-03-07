@@ -29,7 +29,7 @@ const BodyClientes = () => {
 
     return (
         //Ver de transformar el componente description en un styledComponent
-            <Grid2 container spacing={2} sx={{width: '90%', position: 'relative', left: '7.5em'}}>
+            <Grid2 container spacing={2} sx={{width: '100%', height: '100%', position: 'relative'}}>
                 <Grid2 md={3.5} sx={{height: '38%'}}>
                     <Description title={'CLIENTES'} description={optionDescription}/>
                 </Grid2>
@@ -47,7 +47,7 @@ const BodyClientes = () => {
                 </Grid2>
                 <Grid2 md={4} sx={{height: '62%'}}>
                     <StyledContainer id='contSearch'>
-                        <SearchBar ref={elementRef} setClientSelected={setClientSelected}/>
+                        <SearchBar ref={elementRef} clientSelected={clientSelected} setClientSelected={setClientSelected}/>
                         <p className='text-title title-table text-search'>{clientSelected === null ? 'Buscar cliente' : ''}</p>
                         <div className='container-content-search'>
                             {
@@ -62,7 +62,7 @@ const BodyClientes = () => {
                                                     </div>
                                                 </>
                                                 
-                                                : <InfoClient />
+                                                : <InfoClient client={clientSelected}/>
                             }
                         </div>
                     </StyledContainer>

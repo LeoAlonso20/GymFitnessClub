@@ -5,7 +5,7 @@ const Description = ({title, description, sx}) => {
 
 
     return (
-        <div className={`container-option-description`}>
+        <div className={`container-option-description`} style={sx}>
                     <div className='container-content'>
                         <div className={`container-title-description`}>
                             <p className={`text-title title-description`}>{title}</p>

@@ -1,12 +1,9 @@
 import React, {useContext} from "react"
-
 import './OptionsNav.css'
 import { Animated } from "react-animated-css"
 import NavContext from "../../../context/navContext"
 import ButtonOption from "../ButtonOption/ButtonOption"
 import useOptionPath from "../../../hooks/useOptionPath"
-
-import PersonAddAlt1TwoToneIcon from '@mui/icons-material/PersonAddAlt1TwoTone';
 
 const OptionsNav = () => {
 
