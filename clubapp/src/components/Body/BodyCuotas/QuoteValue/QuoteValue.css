@@ -1,0 +1,52 @@
+/* Clases para el bloque Valor de cuota` */
+
+.quote-value{
+    width: 53%;
+    height: 59%;
+    background: transparent;
+    border: 3px solid rgb(33, 43, 54);
+    border-radius: 50%;
+    position: relative;
+    top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.month-rec{
+    width: 50%;
+    height: 62%;
+    top: 1.25em;
+}
+
+.action-quote-value{
+    background-color: white;
+    width: 15%;
+    height: 16%;
+    position: absolute;
+    right: 0.3em;
+    top: 1.5em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.text-value{
+    font-size: 2em;
+    font-weight: 550;
+    color: rgb(33, 43, 54);
+    cursor: pointer;
+}
+
+.form-quote-value{
+    width: 80%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.6em;
+}
+
+.input-quote{
+    text-align: center;
+}

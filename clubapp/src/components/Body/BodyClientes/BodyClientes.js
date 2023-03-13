@@ -54,11 +54,9 @@ const BodyClientes = () => {
                                 clientSelected === null
                                                 ?  
                                                 <>
-                                                    <div className='container-text-desc-search'>
-                                                            <p className='text-desc-search'>Consulte la información del cliente que desee</p>
-                                                    </div>
-                                                    <div className='container-img'>
-                                                        <img src={require('../../../images/functions/investigacion.png')} alt='search-img' className='img-search'/>
+                                                    <div className='container-img-search'>
+                                                        <img src={require('../../../images/functions/buscarCliente.png')} alt='search-img' className='img-search'/>
+                                                        <p className='text-legend-search'>Consulte rápidamente los datos de un cliente</p>
                                                     </div>
                                                 </>
                                                 

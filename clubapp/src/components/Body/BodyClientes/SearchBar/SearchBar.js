@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
+import AttachMoneyRoundedIcon from '@mui/icons-material/AttachMoneyRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import HorizontalRuleRoundedIcon from '@mui/icons-material/HorizontalRuleRounded';
 import { StyledInput } from '../../../Shared/StyledComponents';
@@ -91,7 +92,7 @@ const clients = [
 ]
 
 
-const SearchBar = forwardRef(({clientSelected, setClientSelected}, ref) => {
+const SearchBar = forwardRef(({clientSelected, setClientSelected, sx, idIcon}, ref) => {
 
     const [open, setOpen] = useState(false)
 
@@ -145,19 +146,32 @@ const SearchBar = forwardRef(({clientSelected, setClientSelected}, ref) => {
         return 'hidden'
     }
 
+    const defineIconShow = idIcon => {
+        switch(idIcon){
+
+            case 1:
+                return <AttachMoneyRoundedIcon sx={{color: 'rgb(33, 43, 54)'}}/>
+            default:
+                return <SearchIcon sx={{color: 'rgb(33, 43, 54)'}} /> 
+
+        }
+    }
+
     
     return (
         <>
             <div className='box-search-container'>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', 
-                    height: '40px', position: 'relative', left: '1.4em', top: '1em' }}>
+                    height: '40px', position: 'relative', left: '1.4em', top: '1em', ...sx}}>
                 <IconButton
                     size="small"
                     sx={{ ml: 2 }}
                     onClick={handleClick}
                 >
                     <Avatar sx={{ width: 40, height: 40, backgroundColor: 'rgb(99, 115, 129, 0.12)' }}>
-                    <SearchIcon sx={{color: 'rgb(33, 43, 54)'}} />
+                    {
+                        defineIconShow(idIcon)
+                    }
                     </Avatar>
                 </IconButton>
             </Box>

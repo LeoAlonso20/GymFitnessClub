@@ -46,7 +46,7 @@
 
 .text-search{
     font-size: 1.1em;
-    left: 4.2em;
+    left: 4.4em;
     top: 1.2em;
 }
 
@@ -81,19 +81,30 @@
 
 /* Imagen del search */
 
-.container-img{
-    width: 50%;
-    height: auto;
+.container-img-search{
+    width: 100%;
+    height: 85%;
     position: absolute;
-    bottom: 3em;
-    right: 1em;
+    top: 0em;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-/* .img-search{
-} */
+.img-search{
+    transform: scale(0.525);
+    position: relative;
+    bottom: 2em;
+}
+
+.text-legend-search{
+    position: absolute;
+    bottom: 1.5em;
+    color: rgb(33, 43, 54);
+    font-size: 1.2em;
+    width: 65%;
+}
 
 /* medias querys */
 
